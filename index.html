@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.btn').click(function(e){
+					$('.cal').val($('.cal').val() + $(this).val());
+			});
+				$('#allclear').click(function(){
+					$('.cal').val('');
+				});
+				$('#clear').click(function(){
+					$('.cal').val($('.cal').val().slice(0,-1));
+				});
+				$('#equal').click(function(){
+					$('.cal').val(eval($('.cal').val()));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<form name="form">
+				<input class="cal"> 
+			</form>
+			<table>
+				<tr>
+					<td><input type="button" value="C" id="allclear"></td>
+					<td><input type="button" value="%" class="btn"></td>
+					<td><input type="button" value="<" id="clear"></td>
+					<td><input type="button" value="/" class="btn"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="7" class="btn"></td>
+					<td><input type="button" value="8" class="btn"></td>
+					<td><input type="button" value="9" class="btn"></td>
+					<td><input type="button" value="*" class="btn"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="4" class="btn"></td>
+					<td><input type="button" value="5" class="btn"></td>
+					<td><input type="button" value="6" class="btn"></td>
+					<td><input type="button" value="-" class="btn"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="1" class="btn"></td>
+					<td><input type="button" value="2" class="btn"></td>
+					<td><input type="button" value="3" class="btn"></td>
+					<td><input type="button" value="+" class="btn"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="00" class="btn"></td>
+					<td><input type="button" value="0" class="btn"></td>
+					<td><input type="button" value="." class="btn"></td>
+					<td><input type="button" value="=" id="equal"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
